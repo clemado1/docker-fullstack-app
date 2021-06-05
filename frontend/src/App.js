@@ -26,7 +26,7 @@ function App() {
       .then(response => {
         if(response.data.success) {
           console.log('response', response);
-          setLists([...lists, reponse.data]);
+          setLists([...lists, response.data]);
           setValue("");
         } else {
           alert('저장 실패');
