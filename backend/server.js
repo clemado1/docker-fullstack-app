@@ -11,13 +11,17 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // 테이블 생성
-// db.pool.query(`CREATE TABLE lists (
-//     id INTEGER AUTO_INCREMENT,
-//     value TEXT,
-//     PRIMARY KEY (id)
-// )`, (err, results, fileds) => {
-//     console.log("result", results);
-// });
+db.pool.query(`CREATE TABLE lists (
+    id INTEGER AUTO_INCREMENT,
+    value TEXT,
+    PRIMARY KEY (id)
+)`, (err, results, fileds) => {
+    console.log("result", results);
+});
+
+app.get('/api/hi', function (req, res) {
+   res.status(200).send('good')
+});
 
 // DB lists 데이터를 프론트로 전송
 app.get("/api/values", function(req, res) {
