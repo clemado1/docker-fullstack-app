@@ -36,8 +36,8 @@ app.get("/api/values", function(req, res) {
 
 
 // 데이터를 DB에 입력
-app.get("/api/value", function(req, res, next) {
-    db.pool.query(`INSERT INTO lists (value) VALUES('${req.body.value}');`,
+app.post("/api/value", function(req, res, next) {
+    db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}")`,
     (err, results, fileds) => {
         if(err)
             return res.status(500).send(err);
