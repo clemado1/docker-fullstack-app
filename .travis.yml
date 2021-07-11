@@ -29,11 +29,10 @@ deploy:
   env: "Dockerfullstackapp-env"
   bucket_name: elasticbeanstalk-ap-northeast-2-678590436186
   bucket_path: "docker-fullstack-app"
-  edge: true
   on:
     branch: main
 
-access_key_id: $AWS_ACCESS_KEY
-access_secret_key: $AWS_SECRET_ACCESS_KEY
+  access_key_id: $AWS_ACCESS_KEY
+  access_secret_key: $AWS_SECRET_ACCESS_KEY
 
 
